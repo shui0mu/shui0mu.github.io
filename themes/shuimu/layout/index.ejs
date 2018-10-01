@@ -1,0 +1,25 @@
+<div class="tags">
+  <a class="tags-label" href="<%- url_for() %>">Tags: <span><%- page.tag %></span></a>
+  <%- list_tags({show_count:false}) %>
+</div>
+<div class="content">
+  <ul class="posts">
+    <% page.posts.each(function (post) { %>
+      <li class="post">
+        <span class="date"><%= date(post.date, "YYYY-MM-DD") %></span>
+        <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        <span class="tag">
+          <i class="ft ft-tag"></i>
+          <% post.tags.each(function (tag) { %>
+            <%- link_to(url_for(tag.path), tag.name, {class:'name'}) %>
+          <% }) %>
+        </span>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<% if (page.total > 1){ %>
+  <nav class="paginator">
+    <%- paginator({prev_text:"←"+__('Paginator.Prev'), next_text:__('Paginator.Next')+"→"}) %>
+  </nav>
+<% } %>

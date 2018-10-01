@@ -1,0 +1,58 @@
+@import "font/ft-embedded"
+html{
+  color:seagreen; background-color:#171f26; font-size:1.2em; line-height:1.4;
+  a{color:mediumaquamarine; text-decoration:none; &:hover{color:forestgreen;}}
+}
+body{max-width:40em; margin:0 auto; padding:.2em;}
+.header{
+  margin-top:1.8em; display:flex; align-items:baseline; justify-content:space-between;
+  .logo{color:cyan; font-size:2em; font-family:"Rosewood Std Regular",cursive,sans-serif;}
+  .tabs{
+    margin:0; padding:0;
+    .tab{
+      display:inline-block; padding:0 .5em 0 .25em; border-right:.06em solid; 
+      &:last-child{border-right:0; padding-right:0;}
+    }
+  }
+}
+.tags{
+  margin:1em auto; padding:0 3.5em;
+  .tags-label{color:peru; font-weight:bold; span:before{content:'#';}}
+  .tag-list{list-style:none; padding:0; display:flex; flex-flow:wrap;}
+  .tag-list-link:before{content:'#'; color:mediumspringgreen;}
+  .tag-list-item{padding-right:.65em;}
+  .tag-list-count{&:before{content:'(';} &:after{content:')';}}
+}
+.posts{
+  list-style:none; padding:0; margin:0 auto;
+  .post{
+    margin:.25em 0;
+    .date{margin-right:.25em; color:olivedrab;}
+    .title{color:dodgerblue;}
+    .tag{
+      .ft{color:teal; &:before{width:.9em; margin-right:0;}}
+      &:before{content:'|'; color:teal;}
+      .name{&:before{content:'#'; color:mediumspringgreen;}}
+    }
+  }
+}
+.paginator{
+  padding:.5em 0; text-align:center; .prev,.next,.page-number{padding:.1em .5em;}
+  .prev{float:left;} .next{float:right;}
+}
+.content{
+  margin:1em auto; padding:.3em 2.5em; 
+  .title{color:tomato;}
+  .time{color:peru;}
+}
+
+.toc{
+  padding-left:0;
+  &,ol{list-style:none;}
+  a{color:indianred;}
+}
+.top{
+  opacity:.9; color:gray; margin-right:-1.5em; position:sticky; float:right;
+  bottom:1em; font-size:1.5em; display:flex; flex-flow:column;
+  span{font-size:.5em; text-align:center;}
+}

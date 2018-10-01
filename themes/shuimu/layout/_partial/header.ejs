@@ -1,0 +1,8 @@
+<header class="header">
+  <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
+  <ul class="tabs">
+    <% for (n in theme.tabs) { %>
+      <li class="tab"><a href="<%- url_for(theme.tabs[n]) %>"><%- __('Tabs.'+n) %></a></li>
+    <% } %>
+  </ul>
+</header>

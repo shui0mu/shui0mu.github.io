@@ -1,0 +1,13 @@
+<div class="content">
+  <h2 class="title"><%= page.title %></h2>
+  <span class="time">
+  	<i class="ft ft-date"></i>
+  	<%- date(page.date, "YYYY-MM-DD") %>
+  </span>
+  <%- toc(page.content) %>
+  <%- page.content %>
+	<a href="#" class="top">
+		<i class="ft ft-up"></i>
+		<span>Top</span>
+	</a>
+</div>
